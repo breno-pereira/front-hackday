@@ -35,6 +35,13 @@ export default {
     ],
   },
   css: ['~/assets/styles/main.css'],
+  modules: [
+    '@nuxtjs/axios',
+  ],
+  axios: {
+    https: true,
+    baseURL: 'https://the-velopers.netlify.app/',
+  },
   loading: false, // Disable loading bar since AMP will not generate a dynamic page
   render: {
     // Disable resourceHints since we don't load any scripts for AMP

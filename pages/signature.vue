@@ -22,7 +22,7 @@
                 <b-input type="text" />
               </b-field>
 
-              <b-button type="is-info is-light" size="is-medium">Salvar assinatura</b-button>
+              <b-button type="is-info is-light" size="is-medium" @click="createSignature">Salvar assinatura</b-button>
             </div>
           </div>
         </div>
@@ -40,7 +40,21 @@ Vue.use(Input)
 Vue.use(Field)
 Vue.use(Button)
 
-export default { }
+export default {
+  methods: {
+    createSignature() {
+      this.$axios.post('/.netlify/functions/create-signature', {
+        "name": 'Breno',
+        "email": 'breno.pereira@quero.com',
+        "job": 'Dev'
+      }).then(({ data }) => {
+      alert('Assinatura criada com sucesso')
+    }).catch((e) => {
+      console.log(e);
+    });
+    }
+  }
+}
 </script>
 
 <style>
