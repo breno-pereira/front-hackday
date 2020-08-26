@@ -51,9 +51,9 @@ export default {
   methods: {
     createSignature() {
       this.$axios.post('/.netlify/functions/create-signature', {
-        name,
-        email,
-        job
+        "name": this.name,
+        "email": this.email,
+        "job": this.job
       }).then(({ data }) => {
       alert('Assinatura criada com sucesso')
     }).catch((e) => {
