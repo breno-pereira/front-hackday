@@ -97,8 +97,7 @@ export default {
     getSponsors() {
       this.$axios.get('/.netlify/functions/select-all-sponsors')
       .then(({ data }) => {
-        console.log(data)
-        this.sponsors = data;
+        this.sponsors = data.data;
       });
     },
   }
