@@ -15,7 +15,12 @@ export default {
     title: 'Internet pela Educação - Um movimento pelo acesso ilimitado a conteúdos de educação',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width,minimum-scale=1' }
+      { name: 'viewport', content: 'width=device-width,minimum-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Se você também acredita e apoia a liberação do acesso gratuito e ilimitado aos conteúdos educacionais, assine esse manifesto e junte-se a nós nessa luta!'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' },

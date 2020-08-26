@@ -4,10 +4,11 @@
       <div class="container">
         <div class="header-wrapper">
           <div class="icon-wrapper">
-            <img class="icon-wrapper__item" src="~/assets/images/logo.svg" />
+            <img class="icon-wrapper__item" src="~/assets/images/logo.svg" alt="Internet pela educação" />
             <h2 class="home-wrapper__title">Um movimento pela acesso ilimitado a conteúdos de educação</h2>
           </div>
           <iframe
+            title="Internet pela Educação - Um movimento pelos estudantes"
             class="home-wrapper__video"
             type="text/html"
             src="https://www.youtube.com/embed/rHax1Pg-iSM"
