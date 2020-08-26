@@ -50,15 +50,25 @@ export default {
   },
   methods: {
     createSignature() {
-      this.$axios.post('/.netlify/functions/create-signature', {
-        "name": this.name,
-        "email": this.email,
-        "job": this.job
-      }).then(({ data }) => {
-      alert('Assinatura criada com sucesso')
-    }).catch((e) => {
-      console.log(e);
-    });
+      if (this.name !== '' || this.email !== '' || this.job !== '') {
+        this.$axios.post('/.netlify/functions/create-signature', {
+            "name": this.name,
+            "email": this.email,
+            "job": this.job
+          }).then(({ data }) => {
+          alert('Assinatura criada com sucesso');
+          this.clearFields();
+        }).catch((e) => {
+          console.log(e);
+        });
+      } else {
+        alert('Preencher todos os campos.');
+      }
+    },
+    clearFields() {
+      this.email = '';
+      this.name = '';
+      this.job = '';
     }
   }
 }
