@@ -12,16 +12,24 @@ const modifyHtml = (html) => {
 
 export default {
   head: {
+    title: 'Internet pela Educação - Um movimento pelo acesso ilimitado a conteúdos de educação',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width,minimum-scale=1' }
     ],
     link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' },
+      { rel: 'dns-prefetch', href: 'https://kit.fontawesome.com', crossorigin: 'anonymous' },
+      { rel: 'preconnect', href: 'https://kit.fontawesome.com', crossorigin: 'anonymous' },
+      { rel: 'preload', href: 'https://kit.fontawesome.com/0863cfd815.js', crossorigin: 'anonymous', as: 'script' },
       { rel: 'canonical', href: '/' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
-    ]
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Poppins' }
+    ],
+    script: [
+      { src: 'https://kit.fontawesome.com/0863cfd815.js', async: true, defer: true, crossorigin: 'anonymous' },
+    ],
   },
-  css: ['~/assets/main.css'],
+  css: ['~/assets/styles/main.css'],
   loading: false, // Disable loading bar since AMP will not generate a dynamic page
   render: {
     // Disable resourceHints since we don't load any scripts for AMP
