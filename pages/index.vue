@@ -86,8 +86,8 @@ export default {
   },
   mounted() {
     this.$axios.get('/.netlify/functions/count-signature')
-      .then((response) => {
-        this.countSignatures = response;
+      .then(({ data }) => {
+        this.countSignatures = data;
       });
   },
   methods: {
