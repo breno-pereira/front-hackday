@@ -15,11 +15,11 @@
               </b-field>
 
               <b-field label="Email">
-                <b-input type="email" />
+                <b-input type="email" v-model="email" />
               </b-field>
 
               <b-field label="Profissão">
-                <b-input type="text" />
+                <b-input type="text" v-model="job" />
               </b-field>
 
               <b-button type="is-info is-light" size="is-medium" @click="createSignature">Salvar assinatura</b-button>
