@@ -1,5 +1,5 @@
 # front-hackday
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/91342028-a24d-4fc5-a2cd-6d1f1b392253/deploy-status)](https://app.netlify.com/sites/the-velopers/deploys)
 ## Build Setup
 
 ```bash
