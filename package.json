@@ -10,7 +10,7 @@
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "yarn lint:js",
     "bootstrap": "node ./scripts/bootstrap-db.js",
-    "start:server": "netlify-lambda serve functions -c ./webpack.config.js"
+    "build:functions": "netlify-lambda build functions -c ./webpack.config.js"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.0",
@@ -25,7 +25,8 @@
     "@nuxtjs/eslint-module": "^2.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.5.0",
-    "eslint-plugin-nuxt": "^1.0.0"
+    "eslint-plugin-nuxt": "^1.0.0",
+    "netlify-lambda": "^2.0.1"
   },
   "proxy": {
     "/.netlify/functions": {
