@@ -52,6 +52,11 @@ export default {
         path: '/form',
         component: resolve(__dirname, 'pages/form.vue'),
       });
+      routes.push({
+        name: 'assinatura',
+        path: '/assinatura',
+        component: resolve(__dirname, 'pages/signature.vue'),
+      });
     },
   },
 }
