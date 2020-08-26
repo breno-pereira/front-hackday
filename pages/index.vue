@@ -44,12 +44,7 @@
         <div class="support-wrapper">
           <h1>Quem apoia</h1>
           <div class="sponsors-list">
-            <img class="sponsors-list__item" src="https://d335luupugsy2.cloudfront.net/cms/files/48377/1595364057/$xk5y4cl99e" alt="Quero Educação">
-            <img class="sponsors-list__item" src="https://d335luupugsy2.cloudfront.net/cms/files/48377/1596548736/$qskrk30zdq" alt="Quero Educação">
-            <img class="sponsors-list__item" src="https://d335luupugsy2.cloudfront.net/cms/files/48377/1597692004/$71zv7udyw3u" alt="Quero Educação">
-            <img class="sponsors-list__item" src="https://d335luupugsy2.cloudfront.net/cms/files/48377/1597696344/$1bemtrywgcy" alt="Quero Educação">
-            <img class="sponsors-list__item" src="https://d335luupugsy2.cloudfront.net/cms/files/48377/1597861369/$jgjfqz0req" alt="Quero Educação">
-            <img class="sponsors-list__item" src="https://d335luupugsy2.cloudfront.net/cms/files/48377/1598297449/$oiipkqscqsh" alt="Quero Educação">
+            <img v-for="(item, index) in sponsors" :key="index" :src="item.data.src" :alt="item.data.alt">
           </div>
         </div>
       </div>
@@ -82,18 +77,29 @@ export default {
   data() {
     return {
       countSignatures: 0,
+      sponsors: [],
     }
   },
   mounted() {
-    this.$axios.get('/.netlify/functions/count-signature')
-      .then(({ data }) => {
-        this.countSignatures = data;
-      });
+    this.getSignatureCount();
+    this.getSponsors();
   },
   methods: {
     goToSignaturePage() {
       this.$router.push('/signature');
-    }
+    },
+    getSignatureCount() {
+      this.$axios.get('/.netlify/functions/count-signature')
+      .then(({ data }) => {
+        this.countSignatures = data;
+      });
+    },
+    getSponsors() {
+      this.$axios.get('/.netlify/functions/select-all-sponsors')
+      .then(({ data }) => {
+        this.sponsors = data;
+      });
+    },
   }
 }
 </script>
