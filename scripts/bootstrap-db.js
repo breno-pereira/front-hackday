@@ -18,7 +18,7 @@ function setupFaunaDB() {
   return client
     .query(
       q.CreateCollection({
-        name: "subscriptions"
+        name: "signatures"
       }),
       q.CreateCollection({
         name: "testimonies",

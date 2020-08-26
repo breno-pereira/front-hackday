@@ -18,7 +18,7 @@ exports.handler = (event, context, callback) => {
     }
   }
   /* construct the fauna query */
-  return client.query(q.Create(q.Ref('classes/subscriptions'), signItem))
+  return client.query(q.Create(q.Ref('classes/signatures'), signItem))
     .then((response) => {
       /* Success! return the response with statusCode 200 */
       return callback(null, {

@@ -8,7 +8,7 @@ const client = new faunadb.Client({
 
 exports.handler = (event, context, callback) => {
   /* construct the fauna query */
-  return client.query(q.Count(q.Match(q.Index("all_subscriptions"))))
+  return client.query(q.Count(q.Match(q.Index("all_signatures"))))
     .then((response) => {
       /* Success! return the response with statusCode 200 */
       return callback(null, {
