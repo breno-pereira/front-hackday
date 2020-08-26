@@ -18,7 +18,7 @@
 
         <div class="content-wrapper">
           <div class="button-wrapper">
-            <button class="button-wrapper__item button-wrapper__item--blue">
+            <button class="button-wrapper__item button-wrapper__item--blue" @click="goToSignaturePage">
               <div class="button-wrapper__image">
                 <i class="fas fa-book-open fa-lg"/>
               </div>
@@ -33,7 +33,7 @@
           </div>
           <div class="information-wrapper">
             <div class="text-wrapper">
-              <p>Total de 285 assinaturas já realizadas</p>
+              <p>Total de {{ countSignatures }} assinaturas já realizadas</p>
             </div>
           </div>
         </div>
@@ -78,7 +78,24 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      countSignatures: 0,
+    }
+  },
+  mounted() {
+    this.$axios.get('/.netlify/functions/count-signature')
+      .then((response) => {
+        this.countSignatures = response;
+      });
+  },
+  methods: {
+    goToSignaturePage() {
+      this.$router.push('/signature');
+    }
+  }
+}
 </script>
 
 <style>
