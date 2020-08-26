@@ -41,12 +41,19 @@ Vue.use(Field)
 Vue.use(Button)
 
 export default {
+  data() {
+    return {
+      name: '',
+      email: '',
+      job: '',
+    }
+  },
   methods: {
     createSignature() {
       this.$axios.post('/.netlify/functions/create-signature', {
-        "name": 'Breno',
-        "email": 'breno.pereira@quero.com',
-        "job": 'Dev'
+        name,
+        email,
+        job
       }).then(({ data }) => {
       alert('Assinatura criada com sucesso')
     }).catch((e) => {
