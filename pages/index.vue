@@ -159,7 +159,7 @@ export default {
   padding: 1rem;
   text-decoration: none;
   transition: background-color .2s;
-  width: 12rem;
+  width: 11rem;
 }
 
 .button-wrapper__item--blue {
