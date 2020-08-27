@@ -44,7 +44,7 @@
         <div class="support-wrapper">
           <h1>Quem apoia</h1>
           <div class="sponsors-list">
-            <img v-for="(item, index) in sponsors" :key="index" :src="item.data.src" :alt="item.data.alt">
+            <img v-for="(item, index) in sponsors" :key="index" class="sponsors-list__item" :src="item.data.src" :alt="item.data.alt">
           </div>
         </div>
       </div>
